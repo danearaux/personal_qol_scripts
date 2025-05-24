@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Causes an immediate exit upon error.
-set -e
 echo "Installing your base system! this may take a moment."
 
 # Check if the script is run as root
