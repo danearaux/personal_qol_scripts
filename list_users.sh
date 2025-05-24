@@ -2,7 +2,7 @@
 # Lists users with real shells, their password hashes, and last login times (clean format).
 
 if [[ "$EUID" -ne 0 ]]; then
-    echo "This script must be run as root." >&2
+    echo "This must be run as root." >&2
     exit 1
 fi
 
