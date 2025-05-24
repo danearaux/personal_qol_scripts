@@ -115,7 +115,7 @@ fi
 echo "Cleaning up unnecessary packages and cache..."
 
 # Clean package cache
-pacman -Sc --noconfirm || echo "Failed to clean package cache"
+pacman -Sc --noconfirm || echo "Failed to clean package cache."
 
 # Remove orphaned packages
 orphans=$(pacman -Qdtq 2>/dev/null || true)
