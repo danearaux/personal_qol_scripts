@@ -1,6 +1,11 @@
 #!/usr/bin/bash
 # Lists users with real shells, their password hashes, and last login times (clean format).
 
+if [[ "$EUID" -ne 0 ]]; then
+    echo "This script must be run as root." >&2
+    exit 1
+fi
+
 printf "%-15s %-65s %-30s\n" "Username" "Password Hash" "Last Login"
 printf "%s\n" "$(head -c 120 < /dev/zero | tr '\0' '-')"
 
