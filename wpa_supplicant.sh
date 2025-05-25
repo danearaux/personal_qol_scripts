@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script configures and connects to a Wi-Fi network using wpa_supplicant.
-# It automatically detects the wireless interface and handles common naming conventions.
+
 # Usage: ./connect_wifi.sh <SSID> <PSK>
 # Example: ./connect_wifi.sh "SSID" "PSK"
 
