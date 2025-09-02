@@ -90,7 +90,7 @@ config, pkgs, ... }:
     wallpaper = ,/usr/share/backgrounds/nixos/nix-wallpaper.png
   '';
 
-  programs.foot = {
+  programs.alacritty = {
     enable = true;
     settings = {
       main = {
@@ -99,6 +99,6 @@ config, pkgs, ... }:
     };
   };
 
-  programs.home-manager.enable = true
+  programs.home-manager.enable = true;
 
 }
