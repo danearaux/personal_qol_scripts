@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ];
+  imports = 
+    [
+      ./hardware-configuration.nix
+    ];
 
   # Bootloader etc.
   boot.loader.grub = {
