@@ -4,16 +4,23 @@
   imports = [ ];
 
   # Bootloader etc.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    useOSProber = true;
+    efiSupport = true;
+    efiInstallAsRemovable = false; # look up wtf this is
+  };
+    
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
+  networking.hostName = "tzedeq";
   time.timeZone = "America/Phoenix"; # adjust to your TZ
 
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true; # Simple DM that works with Wayland
+  services.xserver.displayManager.sddm.enable = true; #Simple DM that works with Wayland
   services.xserver.desktopManager.plasma5.enable = false;
   services.xserver.windowManager.hyprland.enable = true;
 
@@ -30,11 +37,11 @@
   # Useful packages system-wide
   environment.systemPackages = with pkgs; [
     git vim wget curl
-    waybar rofi foot # common Hyprland companions
+    waybar rofi alacritty # common Hyprland companions
   ];
 
   # Allow unfree packages if needed
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "24.05"; # change to your installed version
+  system.stateVersion = "25.05"; # change to your installed version
 }
