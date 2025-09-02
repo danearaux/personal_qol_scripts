@@ -38,10 +38,7 @@
   services.networkmanager.enable = true;
 
   # Useful packages system-wide
-  environment.systemPackages = with pkgs; [
-    git vim wget curl
-    waybar rofi alacritty # common Hyprland companions
-  ];
+  environment.systemPackages = with pkgs; [];
 
   # Allow unfree packages if needed
   nixpkgs.config.allowUnfree = true;
